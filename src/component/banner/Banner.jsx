@@ -1,50 +1,58 @@
-import React from 'react'
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import React, { useEffect, useState } from 'react'
+
 
 const Banner = () => {
-    const responsive = {
-        desktop: {
-          breakpoint: { max: 3000, min: 1024 },
-          items: 3,
-          slidesToSlide: 3 // optional, default to 1.
-        },
-        tablet: {
-          breakpoint: { max: 1024, min: 464 },
-          items: 2,
-          slidesToSlide: 2 // optional, default to 1.
-        },
-        mobile: {
-          breakpoint: { max: 464, min: 0 },
-          items: 1,
-          slidesToSlide: 1 // optional, default to 1.
-        }
+    const slides = [
+        { id: 1, url: 'https://via.placeholder.com/600/92c952' },
+        { id: 2, url: 'https://via.placeholder.com/600/771796' },
+        { id: 3, url: 'https://via.placeholder.com/600/24f355' },
+      ];
+    
+      const [currentSlide, setCurrentSlide] = useState(0);
+    
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setCurrentSlide((prev) => (prev + 1) % slides.length);
+        }, 3000);
+        return () => clearInterval(interval);
+      }, [slides.length]);
+    
+      const handlePrev = () => {
+        setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
       };
+    
+      const handleNext = () => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+      };
+    
   return (
-<Carousel
-  swipeable={false}
-  draggable={false}
-  showDots={true}
-  responsive={responsive}
-  ssr={true} // means to render carousel on server-side.
-  infinite={true}
-  autoPlay={this.props.deviceType !== "mobile" ? true : false}
-  autoPlaySpeed={1000}
-  keyBoardControl={true}
-  customTransition="all .5"
-  transitionDuration={500}
-  containerClass="carousel-container"
-  removeArrowOnDeviceType={["tablet", "mobile"]}
-  deviceType={this.props.deviceType}
-  dotListClass="custom-dot-list-style"
-  itemClass="carousel-item-padding-40-px"
->
-  <div>Item 1</div>
-  <div>Item 2</div>
-  <div>Item 3</div>
-  <div>Item 4</div>
-</Carousel>
-  )
+<div className="relative w-full max-w-2xl mx-auto">
+      <div className="overflow-hidden relative">
+        <div className="flex transition-transform duration-1000"
+             style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+          {slides.map((slide) => (
+            <div key={slide.id} className="w-full flex-shrink-0">
+              <img src={slide.url} alt={`Slide ${slide.id}`} className="w-full" />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
+        <button onClick={handlePrev} className="bg-gray-700 text-white p-2 rounded-full">Prev</button>
+      </div>
+      <div className="absolute top-1/2 right-0 transform -translate-y-1/2">
+        <button onClick={handleNext} className="bg-gray-700 text-white p-2 rounded-full">Next</button>
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 flex justify-center p-4 space-x-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full ${index === currentSlide ? 'bg-blue-500' : 'bg-gray-300'}`}
+          />
+        ))}
+      </div>
+    </div>  )
 }
 
 export default Banner

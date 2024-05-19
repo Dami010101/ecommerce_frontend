@@ -24,19 +24,19 @@ const Navbar = () => {
         <IoSearchOutline />
       </div>
       </li>
-        <li className={navStylez}><Link to='/'>Home</Link></li>
-        <li className={navStylez}><Link to='/'>About</Link></li>
-        <li className={navStylez}><Link to='/Productdetails'>Contact Us</Link></li>
-        <li className={navStylez}><Link className=' flex items-center' to='/'><MdShoppingCart size={18} /></Link></li>
-        <li  className={navStylezSelect}>
+        <div className={navStylez}><Link to='/'>Home</Link></div>
+        <div className={navStylez}><Link to='/About'>About</Link></div>
+        <div className={navStylez}><Link to='/ContactUs'>Contact Us</Link></div>
+        <div className={navStylez}><Link className=' flex items-center' to='/Cart'><MdShoppingCart size={18} /></Link></div>
+        <div  className={navStylezSelect}>
             <select name="Support" id="Support" className='text-white bg-gray-800 font-bold text-sm  px-2 py-1 hover:bg-black rounded-lg transition duration-300  '>
             <option value="Support">Support</option>
-            <option value="support_centre"><Link to='/Productdetails'>Support Centre</Link></option>
+            <option value="support_centre"><Link to='/ProductDetail'>Support Centre</Link></option>
             <option value="place_an_order">Place an order</option>
             <option value="cancel_an_order">Cancel an order</option>
             </select>
-        </li>
-        <li className={navStylezButton}><button><Link className='flex items-center' to='/Signin'><MdAccountBox size={18}/>Sign In</Link></button></li>
+        </div>
+        <div className={navStylezButton}><button><Link className='flex items-center' to='/Signin'><MdAccountBox size={18}/>Sign In</Link></button></div>
         </>
     )
   return (
