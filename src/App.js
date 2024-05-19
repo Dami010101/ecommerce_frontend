@@ -1,11 +1,25 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Browse_by_categories from './component/browse_by_category/Browse_by_categories';
+import Navbar from './component/navbar/Navbar';
+import { ToastContainer } from 'react-toastify';
+import Home from './pages/home/Home';
+import Signin from './pages/signin/Signin';
+import Productdetails from './pages/productdetails/Productdetails';
+import Banner from './component/banner/Banner';
 
 function App() {
   return (
     <div className="App">
-      <Browse_by_categories/>
-
+      <BrowserRouter>
+      <ToastContainer/>
+      <Navbar/>
+      {/* <Banner/> */}
+      <Routes>
+        <Route element={<Home/>} path='/'/>    
+        <Route element={<Signin/>} path='/Signin'/>    
+        <Route element={<Productdetails/>} path='/Productdetails'/>    
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }

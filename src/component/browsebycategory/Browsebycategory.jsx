@@ -9,8 +9,7 @@ import { CiSpeaker } from "react-icons/ci";
 import { FaTabletScreenButton } from "react-icons/fa6";
 
 
-
-const Browse_by_categories = () => {
+const Browsebycategory = () => {
   return (
     <div>
         <TbDeviceMobile />
@@ -21,9 +20,8 @@ const Browse_by_categories = () => {
         <IoGameController />
         <CiSpeaker />
         <FaTabletScreenButton />
-
     </div>
   )
 }
 
-export default Browse_by_categories
+export default Browsebycategory
