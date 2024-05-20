@@ -6,7 +6,7 @@ import Home from './pages/home/Home';
 import Signin from './pages/signin/Signin';
 import Banner from './component/banner/Banner';
 import ProductDetail from './pages/productdetails/ProductDetail';
-import StaticBanner from './component/banner/StaticBanner';
+// import StaticBanner from './component/banner/StaticBanner';
 import Register from './pages/register/Register';
 import About from './pages/about/About';
 import ContactUs from './pages/contactUs/ContactUs';
@@ -18,7 +18,7 @@ function App() {
       <BrowserRouter>
       <ToastContainer/>
       <Navbar/>
-      <StaticBanner/>
+      {/* <StaticBanner/> */}
       <Banner/>
       <Routes>
         <Route element={<Home/>} path='/'/>    

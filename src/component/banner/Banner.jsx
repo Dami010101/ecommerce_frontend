@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-
+// import image1 from '../../asset/israel-palacio-Y20JJ_ddy9M-unsplash.jpg'
 
 const Banner = () => {
     const slides = [
+        // { id: 1, url: 'https://via.placeholder.com/600/92c952' },
         { id: 1, url: 'https://via.placeholder.com/600/92c952' },
         { id: 2, url: 'https://via.placeholder.com/600/771796' },
         { id: 3, url: 'https://via.placeholder.com/600/24f355' },
