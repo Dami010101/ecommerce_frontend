@@ -9,15 +9,14 @@ import Register from './pages/register/Register';
 import About from './pages/about/About';
 import ContactUs from './pages/contactUs/ContactUs';
 import Cart from './component/cart/Cart';
-import BannerPosterLayout from './component/bannerPosterLayout/BannerPosterLayout';
+import Footer from './component/footer/Footer';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
       <ToastContainer/>
-      <Navbar className='z-10'/>
-      <BannerPosterLayout className='z-0'/>
+      <Navbar/>
       <Routes>
         <Route element={<Home/>} path='/'/>    
         <Route element={<About/>} path='/About'/>    
@@ -27,6 +26,7 @@ function App() {
         <Route element={<Register/>} path='/Register'/>    
         <Route element={<ProductDetail/>} path='/ProductDetails'/>    
       </Routes>
+      <Footer/>
       </BrowserRouter>
     </div>
   );
