@@ -13,23 +13,23 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 const BrowseByCategory = () => {
   return (
     <div>
-        <div className='flex w-1/2 justify-between mx-auto font-bold mb-3 items-center'>
-            <h1>Browse by category</h1>
+        <div className='flex p-2 justify-between mx-auto font-bold mb-3 items-center'>
+            <h1 className='text-xl'>Browse by category</h1>
             <div className='flex'>
                 <div><button><MdOutlineKeyboardArrowLeft size={20} /></button></div>
                 <div><button><MdOutlineKeyboardArrowRight size={20} /></button></div>
             </div>
         </div>
         {/* <div className='flex gap-3 justify-around mx-auto w-1/2'> */}
-        <div className='grid px-2 py-2 w-full sm:grid-cols-2 justify-items-center md:grid-cols-3  lg:grid-cols-6 gap-7 align'>
-            <div className='' ><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24'><MdPhoneIphone size={30} className='justify-center' />Phones</button></div>
-            <div ><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24'><BsSmartwatch size={30}  />Smart Watch</button></div>
-            <div><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24'><FaCamera size={30}  />Cameras</button></div>
-            <div><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24'><FaHeadphones size={30}  />Headphones</button></div>
-            <div><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24'><MdOutlineComputer size={30}  />Computer</button></div>
-            <div><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24'><IoGameController size={30}  />Gaming</button></div>
-            {/* <div><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24'><LuSpeaker size={30}  />Speakers</button></div>
-            <div><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24'><TbDeviceVisionPro size={30}  />Vision pro</button></div> */}
+        <div className='grid px-2 py-2 w-full sm:grid-cols-3 justify-items-center md:grid-cols-4  lg:grid-cols-6 gap-7 align'>
+            <div className='' ><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24 transition-transform duration-300 transform hover:scale-110'><MdPhoneIphone size={30} className='justify-center' />Phones</button></div>
+            <div ><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24 transition-transform duration-300 transform hover:scale-110'><BsSmartwatch size={30}  />Smart Watch</button></div>
+            <div><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24 transition-transform duration-300 transform hover:scale-110'><FaCamera size={30}  />Cameras</button></div>
+            <div><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24 transition-transform duration-300 transform hover:scale-110'><FaHeadphones size={30}  />Headphones</button></div>
+            <div><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24 transition-transform duration-300 transform hover:scale-110'><MdOutlineComputer size={30}  />Computer</button></div>
+            <div><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24 transition-transform duration-300 transform hover:scale-110'><IoGameController size={30}  />Gaming</button></div>
+            {/* <div><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24 transition-transform duration-300 transform hover:scale-110'><LuSpeaker size={30}  />Speakers</button></div>
+            <div><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24 transition-transform duration-300 transform hover:scale-110'><TbDeviceVisionPro size={30}  />Vision pro</button></div> */}
         </div>
     </div>
   )

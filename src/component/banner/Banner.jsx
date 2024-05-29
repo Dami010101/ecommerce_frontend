@@ -7,7 +7,6 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 
 const Banner = () => {
     const slides = [
-        // { id: 1, url: 'https://via.placeholder.com/600/92c952' },
         { id: 1, url: image1 },
         { id: 2, url: 'https://images.unsplash.com/photo-1542541864-4abf21a55761?q=80&w=1903&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
         { id: 3, url: 'https://images.unsplash.com/photo-1578319439584-104c94d37305?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
@@ -32,14 +31,14 @@ const Banner = () => {
       };
     
   return (
-<div className="relative w-full max-w-2xl mx-auto ">
+<div className="relative w-full max-w-3xl mx-auto py-2 ">
 
                     <div className="overflow-hidden relative">
                       <div className="flex transition-transform duration-2000"
                           style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                         {slides.map((slide) => (
                         <div key={slide.id} className="w-full flex-shrink-0">
-                            <img style={{ width: '100%', height: '80vh', objectFit: 'cover' }} src={slide.url} alt={`Slide ${slide.id}`} className="w-full" />
+                            <img style={{ width: '100%', height: '83vh' }} src={slide.url} alt={`Slide ${slide.id}`} className="w-full" />
                         </div>
                         ))}
                       </div>

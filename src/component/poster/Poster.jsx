@@ -9,7 +9,7 @@ const Poster = () => {
         <img 
           src={posterImage} 
           alt="Poster" 
-          style={{ width: '100%', height: '30vh', objectFit: 'cover' }}
+          style={{ width: '100%', height: '39vh'}}
         //   className="w-full h-64 object-cover rounded-t-lg" 
         className="w-full" 
         />
@@ -18,9 +18,9 @@ const Poster = () => {
           <p className="mt-2">This is a description or subtitle for the poster. It can be a brief overview of the content depicted in the image.</p>
         </div> */}
       </div>
-      <div className="p-1">
+      {/* <div className="p-1">
         <p className="text-gray-700">Great discounts coming soon!!!</p>
-      </div>
+      </div> */}
     </div> 
     
     <div className="max-w-lg mx-auto p-2 bg-white rounded-lg hover:shadow-lg overflow-hidden">
@@ -28,7 +28,7 @@ const Poster = () => {
         <img 
           src={posterImage} 
           alt="Poster" 
-          style={{ width: '100%', height: '30vh', objectFit: 'cover' }}
+          style={{ width: '100%', height: '39vh'}}
         //   className="w-full h-64 object-cover rounded-t-lg" 
         className="w-full" 
         />
@@ -37,9 +37,9 @@ const Poster = () => {
           <p className="mt-2">This is a description or subtitle for the poster. It can be a brief overview of the content depicted in the image.</p>
         </div> */}
       </div>
-      <div className="p-4">
+      {/* <div className="p-4">
         <p className="text-gray-700">Great discounts coming soon!!!</p>
-      </div>
+      </div> */}
     </div> 
     
     </div>   

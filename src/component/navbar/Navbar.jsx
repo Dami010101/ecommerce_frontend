@@ -31,7 +31,7 @@ const Navbar = () => {
         <div className={navStylez}><Link to='/About'>About</Link></div>
         <div className={navStylez}><Link to='/ContactUs'>Contact Us</Link></div>
         <div className={navStylez}><Link className=' flex items-center' to='/Cart'><MdShoppingCart size={23} /></Link></div> 
-        <main className=" bg-zinc-100 p-2 text-zinc-700 flex items-center justify-center">
+        <main className=" bg-zinc-100 rounded-lg text-zinc-700 flex items-center justify-center font-bold">
             <button
               className="relative group transition-all duration-200 focus:overflow-visible w-max h-max p-2 overflow-hidden flex flex-row items-center justify-center bg-white gap-2 rounded-lg border border-zinc-200">
               <span>
@@ -80,24 +80,24 @@ const Navbar = () => {
               </div>
             </button>
           </main>
-          <div className={navStylezButton}><button><Link className='flex items-center' to='/Signin'><MdAccountBox size={18}/>Account</Link></button></div>
+          <div className={navStylezButton}><button><Link className='flex items-center' to='/SignIn'><MdAccountBox size={18}/>Account</Link></button></div>
         </>
     )
   return (
-    <nav className=' bg-red-600 text-black sticky w-full top-0'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+    <nav className=' bg-red-600 text-black sticky w-full'>
+        <div className='max-w-7xl mx-auto px-4 sm:px-6  lg:px-8'>
             <div className='flex items-center justify-between h-16'>
                 <div className='flex flex-row w-full justify-between'>
                     <div className='text-xl font-bold'>
                     <Link to='/'><img src={logo} alt=''/> </Link>
                     </div>
-                    <div className='hidden md:block'>
+                    <div className='hidden lg:block'>
                         <div className='flex ml-10 items-baseline space-x-2'>
                             {navContent}
                         </div>
                     </div>
                 </div>
-                <div className='md:hidden'>
+                <div className='lg:hidden'>
                     <button onClick={()=>{setIsOpen(!isOpen)}} type='button'>
                     <GiHamburgerMenu color='gray'/>
                     </button>
@@ -106,7 +106,7 @@ const Navbar = () => {
         </div>
         {
             isOpen && (
-                <div className='flex flex-col gap-y-2 md:hidden px-4 sm:px-6 pb-2'>
+                <div className='flex flex-col gap-y-2 lg:hidden px-4 sm:px-6 pb-2'>
                     {navContent}
                 </div>
             )
