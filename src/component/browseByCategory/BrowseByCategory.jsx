@@ -21,7 +21,7 @@ const BrowseByCategory = () => {
             </div>
         </div>
         {/* <div className='flex gap-3 justify-around mx-auto w-1/2'> */}
-        <div className='grid px-2 py-2 w-full sm:grid-cols-3 justify-items-center md:grid-cols-4  lg:grid-cols-6 gap-7 align'>
+        <div className='grid px-2 py-2 w-full grid-cols-3 sm:grid-cols-3 justify-items-center md:grid-cols-4  lg:grid-cols-6 gap-7 align'>
             <div className='' ><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24 transition-transform duration-300 transform hover:scale-110'><MdPhoneIphone size={30} className='justify-center' />Phones</button></div>
             <div ><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24 transition-transform duration-300 transform hover:scale-110'><BsSmartwatch size={30}  />Smart Watch</button></div>
             <div><button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24 transition-transform duration-300 transform hover:scale-110'><FaCamera size={30}  />Cameras</button></div>
