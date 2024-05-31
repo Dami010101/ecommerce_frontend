@@ -1,9 +1,9 @@
 import React from 'react'
-import Products from '../products/Products'
 import BannerPosterLayout from '../../component/bannerPosterLayout/BannerPosterLayout'
 import BrowseByCategory from '../../component/browseByCategory/BrowseByCategory'
 import Newsletter from '../../component/newsletter/Newsletter'
 import CTA from '../../component/cta/CTA'
+import HomeContent from '../../component/homeContent/HomeContent'
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       <BannerPosterLayout/>
       <CTA/>
       <BrowseByCategory/>
-      <Products/>
+      <HomeContent/>
       <Newsletter/>
     </div>
   )

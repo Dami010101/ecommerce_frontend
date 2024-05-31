@@ -11,6 +11,8 @@ import SignIn from './pages/account/SignIn';
 import ProductInfo from './pages/productInfo/ProductInfo';
 import SignUp from './pages/account/SignUp';
 import ResetPassword from './pages/account/ResetPassword';
+import Products from './pages/products/Products';
+import SignOut from './pages/account/SignOut';
 
 function App() {
   return (
@@ -25,7 +27,9 @@ function App() {
         <Route element={<Cart/>} path='/Cart'/>    
         <Route element={<SignIn/>} path='/SignIn'/>    
         <Route element={<SignUp/>} path='/SignUp'/>    
+        <Route element={<SignOut/>} path='/SignOut'/>    
         <Route element={<ResetPassword/>} path='/ResetPassword'/>    
+        <Route element={<Products/>} path='/Products'/>    
         <Route element={<ProductInfo/>} path='/ProductInfo'/>    
       </Routes>
       <Footer/>
