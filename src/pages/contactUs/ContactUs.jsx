@@ -1,8 +1,11 @@
 import React from 'react'
+import ProductDetayl from '../productInfo/ProductDetayl'
 
 const ContactUs = () => {
   return (
-    <div>ContactUs</div>
+    <div>
+      <ProductDetayl/>
+    </div>
   )
 }
 

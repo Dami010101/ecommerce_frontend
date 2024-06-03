@@ -21,7 +21,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;&#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -37,7 +37,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -53,7 +53,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -69,7 +69,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -85,7 +85,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -101,7 +101,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -117,7 +117,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -133,7 +133,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -149,7 +149,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -165,7 +165,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -181,7 +181,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -197,7 +197,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -220,7 +220,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -236,7 +236,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -252,7 +252,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -268,7 +268,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -284,7 +284,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -300,7 +300,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -316,7 +316,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -332,7 +332,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -348,7 +348,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -364,7 +364,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -380,7 +380,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -396,7 +396,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -419,7 +419,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -435,7 +435,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -451,7 +451,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -467,7 +467,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -483,7 +483,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -499,7 +499,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -515,7 +515,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -531,7 +531,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -547,7 +547,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -563,7 +563,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -579,7 +579,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
@@ -595,7 +595,7 @@ const HomeContent = () => {
                     <div className="p-1">
                     <div className="text-sm mb-2 h-14">Apple IPhone 15 Pro Max 512gb - Nano Sim - Natural Titanium</div>
                     <p className="text-gray-700 text-sm font-bold">
-                    &#x20A6;{specialPrice}
+                    £{specialPrice}
                     </p>
                     </div>
                     <div className="p-1">
