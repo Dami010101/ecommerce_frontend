@@ -127,14 +127,16 @@ const Navbar = () => {
             <div className='flex items-center justify-between h-16'>
                 <div className='flex flex-row w-full justify-between'>
                     <div className='text-xl font-bold'>
-                      <span className='flex items-center gap-2'>
+                      {/* <span className='flex items-center gap-2'>
                         <span>
                         <Link to='/'><img src={logo} style={{height:50}} alt=''/> </Link>
                         </span>
                         <span>
                         <Link to='/'>shopBeta</Link>
                         </span>
-                      </span>
+                      </span> */}
+                      <Link to='/'><img src={logo} style={{height:50}} alt=''/> </Link>
+
                     </div>
 
                     <div>
