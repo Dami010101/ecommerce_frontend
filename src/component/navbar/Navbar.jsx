@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { MdAccountBox } from "react-icons/md";
 import { MdShoppingCart } from "react-icons/md";
 import logo from '../../asset/noun-shop-logo.png'
 import Search from '../search/Search';
-import { ProductData } from '../../pages/products/ProductData';
-import ProductDisplaySelector from '../../pages/products/ProductDisplaySelector';
+// import { ProductData } from '../../pages/products/ProductData';
+// import ProductDisplaySelector from '../../pages/products/ProductDisplaySelector';
 import { MdSupportAgent } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { MdArrowDropDown } from "react-icons/md";
@@ -29,18 +29,18 @@ const Navbar = () => {
 
 
           //prompt
-          const [filt, setFilter] = useState([])
-          const [search, setSearch] = useState('')
-          const handlesearch=(e)=>{
-            setSearch(e.target.value)
-          }
-          useEffect(() => {
-              setFilter(
-                  ProductData.filter((productData)=>(
-                      productData.product.toLowerCase().includes(search.toLowerCase())
-                  ))
-              )
-          }, [ProductData, search])
+          // const [filt, setFilter] = useState([])
+          // const [search, setSearch] = useState('')
+          // const handlesearch=(e)=>{
+          //   setSearch(e.target.value)
+          // }
+          // useEffect(() => {
+          //     setFilter(
+          //         ProductData.filter((productData)=>(
+          //             productData.product.toLowerCase().includes(search.toLowerCase())
+          //         ))
+          //     )
+          // }, [ProductData, search])
   
 
 
@@ -81,10 +81,10 @@ const Navbar = () => {
           </button>
           {isDropdownOpen && (
             <div className=" top-10 absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
-              <a href="AdminProfile" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Support Centre</a>
-              <a href="Products" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Place an order</a>
-              <a href="ProductProfile" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Track an order</a>
-              <a href="ContactUs" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Cancel an order</a>
+              <a href="CountryList" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Support Centre</a>
+              <a href="/" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Place an order</a>
+              <a href="/" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Track an order</a>
+              <a href="/" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Cancel an order</a>
             </div>
           )}
           </div>
@@ -113,7 +113,7 @@ const Navbar = () => {
               <a href="SignIn" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Sign In</a>
               <a href="SignUp" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Sign Up</a>
               <a href="UserProfile" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Profile</a>
-              <a href="SignOut" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Sign Out</a>
+              <a href="/" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Sign Out</a>
             </div>
           )}
           </div>
@@ -140,7 +140,8 @@ const Navbar = () => {
                     </div>
 
                     <div>
-        <Search onchangehandle={handlesearch} onchangevalue={search} />
+        {/* <Search onchangehandle={handlesearch} onchangevalue={search} /> */}
+        <Search />
 
     </div>
                     <div className='hidden lg:block'>

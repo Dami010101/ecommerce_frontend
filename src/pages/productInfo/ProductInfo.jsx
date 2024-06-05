@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 
 const ProductInfo = () => {
 
-  const ProductDatha = [
+  const ProductData = [
     {
         id: 1,
         name: "XIAOMI Redmi A3 6.71 3GB RAM/64GB ROM Android 12 - Blue + FREE GIFT",
@@ -44,7 +44,7 @@ const ProductInfo = () => {
 ]
 
 const { id } = useParams();  
-const product = ProductDatha.find(p => p.id === parseInt(id));  
+const product = ProductData.find(p => p.id === parseInt(id));  
 if (!product) {    
   return <div>Product not found</div>;
 }

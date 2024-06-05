@@ -11,13 +11,14 @@ import SignIn from './pages/account/SignIn';
 import ProductInfo from './pages/productInfo/ProductInfo';
 import SignUp from './pages/account/SignUp';
 import ResetPassword from './pages/account/ResetPassword';
-import Products from './pages/products/Products';
+// import Products from './pages/products/Products';
 import SignOut from './pages/account/SignOut';
 import ProductDescription from './pages/productDescription/ProductDescription';
 import UserProfile from './pages/userProfile/UserProfile';
 import AdminProfile from './pages/adminProfile/AdminProfile';
 import ProductProfile from './pages/products/ProductProfile';
-import ProductDetayl from './pages/productInfo/ProductDetayl';
+import ProductDisplay from './pages/productInfo/ProductDisplay';
+import CountryList from './pages/account/CountryList';
 
 function App() {
   return (
@@ -34,13 +35,14 @@ function App() {
         <Route element={<SignUp/>} path='/SignUp'/>    
         <Route element={<SignOut/>} path='/SignOut'/>    
         <Route element={<ResetPassword/>} path='/ResetPassword'/>    
-        <Route element={<Products/>} path='/Products'/>    
+        {/* <Route element={<Products/>} path='/Products'/>     */}
         <Route element={<ProductInfo/>} path='/product/:id'/>    
         <Route element={<UserProfile/> } path='/UserProfile'/>    
         <Route element={<AdminProfile/> } path='/AdminProfile'/>    
         <Route element={<ProductProfile/> } path='/ProductProfile'/>    
         <Route element={<ProductDescription/>} path='/ProductDes'/>    
-        <Route element={<ProductDetayl/>} path='/ProductDetayl'/>    
+        <Route element={<ProductDisplay/> } path='/ProductDisplay'/>    
+        <Route element={<CountryList/> } path='/CountryList'/>    
       </Routes>
       <Footer/>
       </BrowserRouter>

@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { IoSearchOutline } from "react-icons/io5";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 
 const Search = ({onchangehandle, onchangevalue}) => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const navigate = useNavigate();
+  // const [searchTerm, setSearchTerm] = useState('');
+  // const navigate = useNavigate();
 
-  const handleSearch = () => {
-    if (searchTerm.trim() !== '') {
-      navigate(`/product/${searchTerm}`);
-    }
-  };
+  // const handleSearch = () => {
+  //   if (searchTerm.trim() !== '') {
+  //     navigate(`/product/${searchTerm}`);
+  //   }
+  // };
 
   return (
     <div>

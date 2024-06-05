@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import profileImage from '../../asset/freestocks-_3Q3tsJ01nc-unsplash.jpg'
+// import profileImage from '../../asset/freestocks-_3Q3tsJ01nc-unsplash.jpg'
 
 
 const initialUserData = {
@@ -131,6 +131,28 @@ const UserProfile = () => {
       >
         {isEditing ? 'Save' : 'Edit'}
       </button>
+
+      <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+              <a
+                href="ProductProfile"
+                className="rounded-md bg-green-500 px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Product Profile
+              </a>
+              <a
+                href="AdminProfile"
+                className="rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Admin Profile
+              </a>
+              <a
+                href="ProductDisplay"
+                className="rounded-md bg-green-500 px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Order Product
+              </a>
+      </div>
+
     </div>
     <div className="bg-white shadow-md rounded-lg p-6 mt-6">
       <h2 className="text-xl font-semibold mb-2">Order History</h2>
