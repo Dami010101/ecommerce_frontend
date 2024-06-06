@@ -19,6 +19,9 @@ import AdminProfile from './pages/adminProfile/AdminProfile';
 import ProductProfile from './pages/products/ProductProfile';
 import ProductDisplay from './pages/productInfo/ProductDisplay';
 import CountryList from './pages/account/CountryList';
+import AdminSignIn from './pages/adminProfile/AdminSignIn';
+import AdminSignUp from './pages/adminProfile/AdminSignUp';
+import AdminSignOut from './pages/adminProfile/AdminSignOut';
 
 function App() {
   return (
@@ -43,6 +46,9 @@ function App() {
         <Route element={<ProductDescription/>} path='/ProductDes'/>    
         <Route element={<ProductDisplay/> } path='/ProductDisplay'/>    
         <Route element={<CountryList/> } path='/CountryList'/>    
+        <Route element={<AdminSignIn/> } path='/AdminSignIn'/>    
+        <Route element={<AdminSignUp/> } path='/AdminSignUp'/>    
+        <Route element={<AdminSignOut/> } path='/AdminSignOut'/>    
       </Routes>
       <Footer/>
       </BrowserRouter>
