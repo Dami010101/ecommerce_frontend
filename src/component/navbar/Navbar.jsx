@@ -40,6 +40,13 @@ const Navbar = () => {
   const [isSubDropdownOpen, setIsSubDropdownOpen] = useState(false);
 
 
+    // State to manage the visibility of the Services dropdown
+    const [isSuppDropdownOpen, setIsSuppDropdownOpen] = useState(false);
+
+    // State to manage the visibility of the sub-dropdown under Services
+    // const [isSubSuppDropdownOpen, setIsSubSuppDropdownOpen] = useState(false);
+
+
 
           //prompt
           // const [filt, setFilter] = useState([])
@@ -78,6 +85,20 @@ const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hove
     e.stopPropagation(); // Prevent event from bubbling up to the main dropdown
     setIsSubDropdownOpen(!isSubDropdownOpen);
   };
+
+
+
+      // Function to toggle the visibility of the Services dropdown
+  const toggleSuppDropdown = () => {
+    setIsSuppDropdownOpen(!isSuppDropdownOpen);
+    // setIsSubSuppDropdownOpen(false); // Close sub-dropdown when toggling main dropdown
+  };
+
+    // Function to toggle the visibility of the sub-dropdown under Services
+  // const toggleSubSuppDropdown = (e) => {
+  //   e.stopPropagation(); // Prevent event from bubbling up to the main dropdown
+  //   setIsSubSuppDropdownOpen(!isSubSuppDropdownOpen);
+  // };
   
     // const navStylezButton = 'text-gray-100 bg-gray-800 font-bold text-sm  px-2 py-1  border-2 border-gray-100 hover:bg-black rounded-lg transition duration-300 text-center'
      
@@ -89,27 +110,118 @@ const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hove
         {/* <div className={navStylez}><Link to='/About'>About</Link></div>
         <div className={navStylez}><Link to='/ContactUs'>Contact Us</Link></div> */}
         <div className={navStylez}><Link className=' flex items-center' to='/Cart'><MdShoppingCart size={23} /></Link></div> 
+
+
+         {/* Services dropdown for mobile view */}
+      <div className="relative lg:hidden" onClick={toggleSuppDropdown}>
+        <button className={`${navStylez} flex items-center`}>
+        <span className='flex items-center gap-2'>
+                <span>
+                <MdSupportAgent size={18} />
+                </span>
+                <span>
+                Support
+                </span>
+        </span>  <MdArrowDropDown size={23} />
+        </button>
+        {isSuppDropdownOpen && (
+          <div className="mt-2 w-full rounded-md bg-white ring-1 ring-black ring-opacity-5">
+            <div className="py-1">
+              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Support Centre</Link>
+              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Place an Order</Link>
+              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Track an Order</Link>
+              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cancel an Order</Link>
+              {/* <div className="relative" onClick={(e) => e.stopPropagation()}>
+                <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={toggleSubSuppDropdown}>
+                  Staff <MdArrowDropDown size={20} className="inline" />
+                </button>
+                {isSubSuppDropdownOpen && (
+                  <div className="mt-2 ml-4 w-full rounded-md bg-white ring-1 ring-black ring-opacity-5">
+                    <div className="py-1">
+                      <a href='SignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</a>
+                      <a href='SignUp' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Up</a>
+                      <a href='AdminProfile' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                      <a href='SignOut' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Out</a>
+                    </div>
+                  </div>
+                )}
+              </div> */}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Services dropdown for larger screens */}
+      <div className={`${navStylez} lg:flex hidden relative`} onClick={toggleSuppDropdown}>
+        <button className='flex items-center'>
+        <span className='flex items-center gap-2'>
+                <span>
+                <MdSupportAgent size={18} />
+                </span>
+                <span>
+                Support
+                </span>
+        </span> <MdArrowDropDown size={23} />
+        </button>
+        {isSuppDropdownOpen && (
+          <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 top-11 right-52">
+            <div className="py-1">
+              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Support Centre</Link>
+              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Place an Order</Link>
+              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Track an Order</Link>
+              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cancel an order</Link>
+              {/* <div className="relative" onClick={(e) => { e.stopPropagation(); toggleSubSuppDropdown(e); }}>
+                <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  Staff <MdArrowDropDown size={20} className="inline" />
+                </button>
+                {isSubSuppDropdownOpen && (
+                  <div className="absolute left-full top-0 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
+                    <div className="py-1">
+                      <a href='SignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</a>
+                      <a href='SignUp' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Up</a>
+                      <a href='AdminProfile' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                      <a href='SignOut' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Out</a>
+                    </div>
+                  </div>
+                )}
+              </div> */}
+            </div>
+          </div>
+        )}
+      </div>
+
+
        
         {/* Services dropdown for mobile view */}
       <div className="relative lg:hidden" onClick={toggleDropdown}>
         <button className={`${navStylez} flex items-center`}>
-          Services <MdArrowDropDown size={23} />
+        <span className='flex items-center gap-2'>
+                <span>
+                <MdAccountBox size={18}/>
+                </span>
+                <span>
+                Account
+                </span>
+        </span>  <MdArrowDropDown size={23} />
         </button>
         {isDropdownOpen && (
           <div className="mt-2 w-full rounded-md bg-white ring-1 ring-black ring-opacity-5">
             <div className="py-1">
-              <Link to='/SignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Service 1</Link>
-              <Link to='/Service2' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Service 2</Link>
+              <Link to='/SignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</Link>
+              <Link to='/SignUp' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Up</Link>
+              <Link to='/UserProfile' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</Link>
+              <Link to='/SignOut' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Out</Link>
               <div className="relative" onClick={(e) => e.stopPropagation()}>
                 <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={toggleSubDropdown}>
-                  Service 3 <MdArrowDropDown size={20} className="inline" />
+                  Staff <MdArrowDropDown size={20} className="inline" />
                 </button>
                 {isSubDropdownOpen && (
                   <div className="mt-2 ml-4 w-full rounded-md bg-white ring-1 ring-black ring-opacity-5">
                     <div className="py-1">
-                      <a href='SignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">SubService 1</a>
-                      <Link to='/SubService2' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">SubService 2</Link>
-                      <Link to='/SubService3' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">SubService 3</Link>
+                      <a href='SignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</a>
+                      <a href='SignUp' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Up</a>
+                      <a href='AdminProfile' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                      <a href='SignOut' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Out</a>
                     </div>
                   </div>
                 )}
@@ -122,23 +234,33 @@ const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hove
       {/* Services dropdown for larger screens */}
       <div className={`${navStylez} lg:flex hidden relative`} onClick={toggleDropdown}>
         <button className='flex items-center'>
-          Services <MdArrowDropDown size={23} />
+        <span className='flex items-center gap-2'>
+                <span>
+                <MdAccountBox size={18}/>
+                </span>
+                <span>
+                Account
+                </span>
+        </span> <MdArrowDropDown size={23} />
         </button>
         {isDropdownOpen && (
           <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 top-11 right-52">
             <div className="py-1">
-              <Link to='/SignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Service 1</Link>
-              <Link to='/Service2' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Service 2</Link>
+              <Link to='/SignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</Link>
+              <Link to='/SignUp' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Up</Link>
+              <Link to='/UserProfile' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</Link>
+              <Link to='/SignOut' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Out</Link>
               <div className="relative" onClick={(e) => { e.stopPropagation(); toggleSubDropdown(e); }}>
                 <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                  Service 3 <MdArrowDropDown size={20} className="inline" />
+                  Staff <MdArrowDropDown size={20} className="inline" />
                 </button>
                 {isSubDropdownOpen && (
                   <div className="absolute left-full top-0 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
                     <div className="py-1">
-                      <a href='SignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">SubService 1</a>
-                      <Link to='/SubService2' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">SubService 2</Link>
-                      <Link to='/SubService3' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">SubService 3</Link>
+                      <a href='SignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</a>
+                      <a href='SignUp' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Up</a>
+                      <a href='AdminProfile' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                      <a href='SignOut' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Out</a>
                     </div>
                   </div>
                 )}
