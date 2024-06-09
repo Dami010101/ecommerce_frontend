@@ -217,7 +217,7 @@ const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hove
                         <span>
                         <Link to='/'><img src={logo} style={{height:50}} alt=''/> </Link>
                         </span>
-                        <span>
+                        <span className=' sm:text-sm lg:text-lg'>
                         <Link to='/'>shopBeta</Link>
                         </span>
                       </span>
