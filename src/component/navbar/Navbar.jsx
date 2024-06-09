@@ -64,7 +64,7 @@ const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hove
     const navContent = (
         <>
 
-        <div className={navStylez}><Link to='/'>Homel</Link></div>
+        <div className={navStylez}><Link to='/'>Home</Link></div>
         <div className={navStylez}><Link to="/cart" className="btn btn-ghost btn-circle flex">
                             <MdShoppingCart className="h-6 w-6" />
                             {cartItemCount > 0 && (
@@ -213,11 +213,11 @@ const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hove
             <div className='flex items-center justify-between h-16'>
                 <div className='flex flex-row w-full justify-between'>
                     <div className='text-xl font-bold'>
-                      <span className='flex items-center gap-2'>
-                        <span>
-                        <Link to='/'><img src={logo} style={{height:50}} alt=''/> </Link>
+                      <span className=''>
+                        <span className=''>
+                        <Link to='/'><img className='pl-7' src={logo} style={{height:30}} alt=''/> </Link>
                         </span>
-                        <span className=' text-sm md:text-lg'>
+                        <span className=''>
                         <Link to='/'>shopBeta</Link>
                         </span>
                       </span>
