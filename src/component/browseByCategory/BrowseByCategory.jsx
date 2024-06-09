@@ -150,7 +150,7 @@ const BrowseByCategory = () => {
                 <div><button onClick={scrollRight}><MdOutlineKeyboardArrowRight size={20} /></button></div>
             </div>
         </div>
-        <div className='grid px-2 py-2 w-full sm:grid-cols-2 justify-items-center md:grid-cols-3 lg:grid-cols-6 gap-7 align'>
+        <div className='grid px-2 py-2 w-full grid-cols-2 sm:grid-cols-2 justify-items-center md:grid-cols-3 lg:grid-cols-6 gap-7 align'>
             {items.slice(currentIndex, currentIndex + itemsPerPage).map((item, index) => (
               <div key={index}>
                 <button className='border p-2 border-gray-400 rounded-lg bg-gray-200 text-xs w-24 text-center flex flex-col items-center'>
