@@ -22,10 +22,13 @@ import CountryList from './pages/account/CountryList';
 import AdminSignIn from './pages/adminProfile/AdminSignIn';
 import AdminSignUp from './pages/adminProfile/AdminSignUp';
 import AdminSignOut from './pages/adminProfile/AdminSignOut';
+import Products from './pages/products/Products';
+import { CartProvider } from './component/cart/CartContext';
 
 function App() {
   return (
     <div className="App">
+      <CartProvider>
       <BrowserRouter>
       <ToastContainer/>
       <Navbar/>
@@ -38,7 +41,7 @@ function App() {
         <Route element={<SignUp/>} path='/SignUp'/>    
         <Route element={<SignOut/>} path='/SignOut'/>    
         <Route element={<ResetPassword/>} path='/ResetPassword'/>    
-        {/* <Route element={<Products/>} path='/Products'/>     */}
+        <Route element={<Products/>} path='/Products'/>    
         <Route element={<ProductInfo/>} path='/product/:id'/>    
         <Route element={<UserProfile/> } path='/UserProfile'/>    
         <Route element={<AdminProfile/> } path='/AdminProfile'/>    
@@ -52,6 +55,7 @@ function App() {
       </Routes>
       <Footer/>
       </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }

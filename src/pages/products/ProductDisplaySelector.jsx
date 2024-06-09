@@ -1,7 +1,9 @@
 import React from 'react'
 import { MdShoppingCart } from "react-icons/md";
+import { useCart } from '../../component/cart/CartContext';
 
-const ProductDisplaySelector = ({product, price, description, brand, cart, phone, email, image, category}) => {
+const ProductDisplaySelector = ({id, product, price, description, brand, cart, phone, email, image, category}) => {
+    const {addToCart} = useCart()
   return (
     <div className=''>
         <button className='transition-transform duration-300 transform hover:scale-110 bg-white'>
@@ -12,12 +14,10 @@ const ProductDisplaySelector = ({product, price, description, brand, cart, phone
                             <div className='font-bold'>£{price}</div>
                             <div class="px-6 pt-4 pb-2">
                                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                                    <a href='About'>
                                         <div className='flex items-center gap-2'>
                                             <div><MdShoppingCart/></div>
-                                            <div>Add to cart</div>
+                                            <div><button onClick={()=>addToCart({id, product, price, image})}>Add to cart</button></div>
                                         </div>
-                                    </a>
                                 </span>                   
                             </div>
                     </div>
