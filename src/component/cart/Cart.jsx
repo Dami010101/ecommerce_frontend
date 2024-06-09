@@ -174,14 +174,28 @@ const Cart = () => {
                                         <p>£{item.price.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
                                         <div className="flex items-center">
                                             <label htmlFor={`quantity-${item.id}`} className="mr-2">Quantity:</label>
-                                            <input
-                                                id={`quantity-${item.id}`}
-                                                type="number"
-                                                min="1"
-                                                value={item.quantity}
-                                                onChange={(event) => handleQuantityChange(item.id, event)}
-                                                className="border rounded p-1 w-16"
-                                            />
+                                            <div className="flex items-center">
+                                                <button
+                                                    onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
+                                                    className="border rounded-l px-2 py-1 bg-gray-200"
+                                                >
+                                                    -
+                                                </button>
+                                                <input
+                                                    id={`quantity-${item.id}`}
+                                                    type="number"
+                                                    min="1"
+                                                    value={item.quantity}
+                                                    onChange={(event) => handleQuantityChange(item.id, event)}
+                                                    className="border-t border-b w-16 text-center"
+                                                />
+                                                <button
+                                                    onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
+                                                    className="border rounded-r px-2 py-1 bg-gray-200"
+                                                >
+                                                    +
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -210,5 +224,6 @@ const Cart = () => {
 };
 
 export default Cart;
+
 
 
