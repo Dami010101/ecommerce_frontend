@@ -16,7 +16,7 @@ const Search = ({onchangehandle, onchangevalue}) => {
   return (
     <div>
         <div className=' pr-4'>      
-            <div className='flex bg-gray-300 w-[300px] p-1 px-3 py-1 items-center mt-2 rounded-full'>
+            <div className='flex bg-gray-300 lg:w-[300px] p-1 px-3 py-1 items-center mt-2 rounded-full sm:w-[200px]'>
                 <input type='text' onChange={onchangehandle} value={onchangevalue} placeholder='Search for products' className='px-3 py-1 w-[95%] outline-none bg-gray-300 rounded-full'/><IoSearchOutline />
             </div>
         </div>
