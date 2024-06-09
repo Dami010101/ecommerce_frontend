@@ -64,7 +64,7 @@ const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hove
     const navContent = (
         <>
 
-        <div className={navStylez}><Link to='/'>Homej</Link></div>
+        <div className={navStylez}><Link to='/'>Homel</Link></div>
         <div className={navStylez}><Link to="/cart" className="btn btn-ghost btn-circle flex">
                             <MdShoppingCart className="h-6 w-6" />
                             {cartItemCount > 0 && (
