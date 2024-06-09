@@ -134,7 +134,7 @@ const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hove
                 <MdAccountBox size={18}/>
                 </span>
                 <span>
-                Account
+                Accountg
                 </span>
         </span>  <MdArrowDropDown size={23} />
         </button>
@@ -222,13 +222,11 @@ const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hove
                         </span>
                       </span>
                     </div>
-
                     <div>
-        <Search />
-
-    </div>
+                        <Search />
+                    </div>
                     <div className='hidden lg:block'>
-                        <div className='flex ml-10 items-baseline space-x-2'>
+                        <div className='flex ml-2 items-baseline space-x-2'>
                             {navContent}
                         </div>
                     </div>
