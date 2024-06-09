@@ -64,7 +64,7 @@ const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hove
     const navContent = (
         <>
 
-        <div className={navStylez}><Link to='/'>Homek</Link></div>
+        <div className={navStylez}><Link to='/'>Homej</Link></div>
         <div className={navStylez}><Link to="/cart" className="btn btn-ghost btn-circle flex">
                             <MdShoppingCart className="h-6 w-6" />
                             {cartItemCount > 0 && (
@@ -217,7 +217,7 @@ const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hove
                         <span>
                         <Link to='/'><img src={logo} style={{height:50}} alt=''/> </Link>
                         </span>
-                        <span className=' sm:text-sm lg:text-lg'>
+                        <span className=' text-sm md:text-lg'>
                         <Link to='/'>shopBeta</Link>
                         </span>
                       </span>
