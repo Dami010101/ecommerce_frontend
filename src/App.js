@@ -24,11 +24,15 @@ import AdminSignUp from './pages/adminProfile/AdminSignUp';
 import AdminSignOut from './pages/adminProfile/AdminSignOut';
 import Products from './pages/products/Products';
 import { CartProvider } from './component/cart/CartContext';
+import OrderList from './component/orderManagement/OrderList';
+import { OrderProvider } from './component/orderManagement/OrderContext';
+
 
 function App() {
   return (
     <div className="App">
       <CartProvider>
+      <OrderProvider>
       <BrowserRouter>
       <ToastContainer/>
       <Navbar/>
@@ -52,9 +56,11 @@ function App() {
         <Route element={<AdminSignIn/> } path='/AdminSignIn'/>    
         <Route element={<AdminSignUp/> } path='/AdminSignUp'/>    
         <Route element={<AdminSignOut/> } path='/AdminSignOut'/>    
+        <Route element={<OrderList/> } path='/OrderList'/>    
       </Routes>
       <Footer/>
       </BrowserRouter>
+      </OrderProvider>
       </CartProvider>
     </div>
   );
