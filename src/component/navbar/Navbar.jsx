@@ -1,92 +1,55 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Link} from 'react-router-dom';
-import { MdAccountBox } from "react-icons/md";
-import { MdShoppingCart } from "react-icons/md";
-import logo from '../../asset/noun-shop-logo.png'
-import Search from '../search/Search';
-import { MdSupportAgent } from "react-icons/md";
+import { Link } from 'react-router-dom';
+import { MdAccountBox, MdShoppingCart, MdSupportAgent, MdArrowDropDown } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
-import { MdArrowDropDown } from "react-icons/md";
+import logo from '../../asset/noun-shop-logo.png';
+import Search from '../search/Search';
 import { useCart } from '../cart/CartContext';
 
-
-
-
 const Navbar = () => {
-
-  //for cart
-  const {cartItems} = useCart();
-
-  // Cart items count
+  const { cartItems } = useCart();
   const cartItemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
 
-  // State to manage the visibility of the Services dropdown
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  // State to manage the visibility of the sub-dropdown under Services
   const [isSubDropdownOpen, setIsSubDropdownOpen] = useState(false);
+  const [isSuppDropdownOpen, setIsSuppDropdownOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
+  const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hover:text-gray-800 rounded-lg transition duration-300 items-center';
 
-    // State to manage the visibility of the Services dropdown
-    const [isSuppDropdownOpen, setIsSuppDropdownOpen] = useState(false);
-
-    
-
-// State to manage the visibility of the main Account dropdown menu
-const [isOpen, setIsOpen] = useState(false);
-
-// CSS styles for the navigation items
-const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hover:text-gray-800 rounded-lg transition duration-300 items-center';    
-    
-// Function to toggle the visibility of the Account dropdown
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
-    setIsSubDropdownOpen(false); // Close sub-dropdown when toggling main dropdown
+    setIsSubDropdownOpen(false);
   };
 
-    // Function to toggle the visibility of the sub-dropdown under Account
   const toggleSubDropdown = (e) => {
-    e.stopPropagation(); // Prevent event from bubbling up to the main Account dropdown
+    e.stopPropagation();
     setIsSubDropdownOpen(!isSubDropdownOpen);
   };
 
-
-
-      // Function to toggle the visibility of the Support dropdown
   const toggleSuppDropdown = () => {
     setIsSuppDropdownOpen(!isSuppDropdownOpen);
-    // setIsSubSuppDropdownOpen(false); // Close sub-dropdown when toggling support main dropdown
   };
 
-     
-  // Navigation content including the main items and the dropdowns
-    const navContent = (
-        <>
-
-        <div className={navStylez}><Link to='/'>Home</Link></div>
-        <div className={navStylez}><Link to="/cart" className="btn btn-ghost btn-circle flex">
-                            <MdShoppingCart className="h-6 w-6" />
-                            {cartItemCount > 0 && (
-                                <span className="badge badge-sm indicator-item bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
-                                {cartItemCount}
-                              </span>
-                              
-                            )}
-                        </Link></div> 
-
-
-         {/* Support dropdown for mobile view */}
+  const navContent = (
+    <>
+      <div className={navStylez}><Link to='/'>Home</Link></div>
+      <div className={`${navStylez} flex items-center`}>
+        <Link to="/cart" className="relative flex items-center">
+          <MdShoppingCart className="h-6 w-6" />
+          {cartItemCount > 0 && (
+            <span className="badge badge-sm bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs absolute top-0 right-0">
+              {cartItemCount}
+            </span>
+          )}
+        </Link>
+      </div>
       <div className="relative lg:hidden" onClick={toggleSuppDropdown}>
         <button className={`${navStylez} flex items-center`}>
-        <span className='flex items-center gap-2'>
-                <span>
-                <MdSupportAgent size={18} />
-                </span>
-                <span>
-                Support
-                </span>
-        </span>  <MdArrowDropDown size={23} />
+          <MdSupportAgent size={18} />
+          <span>Support</span>
+          <MdArrowDropDown size={23} />
         </button>
         {isSuppDropdownOpen && (
           <div className="mt-2 w-full rounded-md bg-white ring-1 ring-black ring-opacity-5">
@@ -99,18 +62,11 @@ const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hove
           </div>
         )}
       </div>
-
-      {/* Support dropdown for larger screens */}
       <div className={`${navStylez} lg:flex hidden relative`} onClick={toggleSuppDropdown}>
         <button className='flex items-center'>
-        <span className='flex items-center gap-2'>
-                <span>
-                <MdSupportAgent size={18} />
-                </span>
-                <span>
-                Support
-                </span>
-        </span> <MdArrowDropDown size={23} />
+          <MdSupportAgent size={18} />
+          <span>Support</span>
+          <MdArrowDropDown size={23} />
         </button>
         {isSuppDropdownOpen && (
           <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 top-11 right-52">
@@ -123,20 +79,11 @@ const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hove
           </div>
         )}
       </div>
-
-
-       
-        {/* Account dropdown for mobile view */}
       <div className="relative lg:hidden" onClick={toggleDropdown}>
         <button className={`${navStylez} flex items-center`}>
-        <span className='flex items-center gap-2'>
-                <span>
-                <MdAccountBox size={18}/>
-                </span>
-                <span>
-                Account
-                </span>
-        </span>  <MdArrowDropDown size={23} />
+          <MdAccountBox size={18} />
+          <span>Account</span>
+          <MdArrowDropDown size={23} />
         </button>
         {isDropdownOpen && (
           <div className="mt-2 w-full rounded-md bg-white ring-1 ring-black ring-opacity-5">
@@ -164,18 +111,11 @@ const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hove
           </div>
         )}
       </div>
-
-      {/* Account dropdown for larger screens */}
       <div className={`${navStylez} lg:flex hidden relative`} onClick={toggleDropdown}>
         <button className='flex items-center'>
-        <span className='flex items-center gap-2'>
-                <span>
-                <MdAccountBox size={18}/>
-                </span>
-                <span>
-                Account
-                </span>
-        </span> <MdArrowDropDown size={23} />
+          <MdAccountBox size={18} />
+          <span>Account</span>
+          <MdArrowDropDown size={23} />
         </button>
         {isDropdownOpen && (
           <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 top-11 right-52">
@@ -203,50 +143,43 @@ const navStylez = 'text-black font-bold text-sm px-2 py-1 hover:bg-gray-100 hove
           </div>
         )}
       </div>
+    </>
+  );
 
-        </>
-        
-    )
   return (
-    <nav className=' shadow bg-white z-40 text-black sticky top-0 w-full items-center'>
-        <div className='max-w-7xl mx-auto px-2 sm:px-4  lg:px-6'>
-            <div className='flex items-center justify-between h-16'>
-                <div className='flex flex-row w-full justify-between'>
-                    <div className='text-xl font-bold'>
-                      <span className=''>
-                        <span className=''>
-                        <Link to='/'><img className='pl-7' src={logo} style={{height:30}} alt=''/> </Link>
-                        </span>
-                        <span className=''>
-                        <Link to='/'>shopBeta</Link>
-                        </span>
-                      </span>
-                    </div>
-                    <div>
-                        <Search />
-                    </div>
-                    <div className='hidden lg:block'>
-                        <div className='flex ml-10 items-baseline space-x-2'>
-                            {navContent}
-                        </div>
-                    </div>
-                </div>
-                <div className='lg:hidden'>
-                    <button onClick={()=>{setIsOpen(!isOpen)}} type='button'>
-                      {isOpen ? <IoMdClose /> : <GiHamburgerMenu />}
-                    </button>
-                </div>
+    <nav className='shadow bg-white z-40 text-black sticky top-0 w-full'>
+      <div className='max-w-7xl mx-auto px-2 sm:px-4 lg:px-6'>
+        <div className='flex items-center justify-between h-16'>
+          <div className='flex items-center w-full justify-between'>
+            <div className='flex items-center'>
+              <Link to='/'>
+                <img src={logo} className='h-8' alt='Logo' />
+              </Link>
+              <Link to='/' className='ml-3 text-xl font-bold'>shopBeta</Link>
             </div>
+            <div className='flex items-center'>
+              <Search />
+            </div>
+            <div className='hidden lg:flex lg:items-center lg:space-x-4'>
+              {navContent}
+            </div>
+          </div>
+          <div className='lg:hidden'>
+            <button onClick={() => setIsOpen(!isOpen)} type='button'>
+              {isOpen ? <IoMdClose size={24} /> : <GiHamburgerMenu size={24} />}
+            </button>
+          </div>
         </div>
-        {
-            isOpen && (
-                <div className='flex flex-col gap-y-2 lg:hidden px-4 sm:px-6 pb-2'>
-                    {navContent}
-                </div>
-            )
-        }
+      </div>
+      {isOpen && (
+        <div className='lg:hidden'>
+          <div className='flex flex-col items-start px-4 py-2'>
+            {navContent}
+          </div>
+        </div>
+      )}
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
