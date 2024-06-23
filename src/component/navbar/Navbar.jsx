@@ -45,40 +45,11 @@ const Navbar = () => {
           )}
         </Link>
       </div>
-      <div className="relative lg:hidden" onClick={toggleSuppDropdown}>
-        <button className={`${navStylez} flex items-center`}>
-          <MdSupportAgent size={18} />
-          <span>Support</span>
-          <MdArrowDropDown size={23} />
-        </button>
-        {isSuppDropdownOpen && (
-          <div className="mt-2 w-full rounded-md bg-white ring-1 ring-black ring-opacity-5">
-            <div className="py-1">
-              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Support Centre</Link>
-              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Place an Order</Link>
-              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Track an Order</Link>
-              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cancel an Order</Link>
-            </div>
-          </div>
-        )}
-      </div>
-      <div className={`${navStylez} lg:flex hidden relative`} onClick={toggleSuppDropdown}>
-        <button className='flex items-center'>
-          <MdSupportAgent size={18} />
-          <span>Support</span>
-          <MdArrowDropDown size={23} />
-        </button>
-        {isSuppDropdownOpen && (
-          <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 top-11 right-52">
-            <div className="py-1">
-              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Support Centre</Link>
-              <Link to='/Products' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Place an Order</Link>
-              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Track an Order</Link>
-              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cancel an order</Link>
-            </div>
-          </div>
-        )}
-      </div>
+
+
+
+
+
       <div className="relative lg:hidden" onClick={toggleDropdown}>
         <button className={`${navStylez} flex items-center`}>
           <MdAccountBox size={18} />
@@ -118,7 +89,7 @@ const Navbar = () => {
           <MdArrowDropDown size={23} />
         </button>
         {isDropdownOpen && (
-          <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 top-11 right-52">
+          <div className="absolute mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 top-11 right-14">
             <div className="py-1">
               <Link to='/SignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</Link>
               <Link to='/SignUp' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Up</Link>
@@ -129,7 +100,7 @@ const Navbar = () => {
                   Staff <MdArrowDropDown size={20} className="inline" />
                 </button>
                 {isSubDropdownOpen && (
-                  <div className="absolute left-full top-0 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
+                  <div className="absolute  top-11 mt-0 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20 "> 
                     <div className="py-1">
                       <a href='SignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</a>
                       <a href='SignUp' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Up</a>
@@ -143,6 +114,43 @@ const Navbar = () => {
           </div>
         )}
       </div>
+
+      <div className="relative lg:hidden" onClick={toggleSuppDropdown}>
+        <button className={`${navStylez} flex items-center`}>
+          <MdSupportAgent size={18} />
+          <span>Support</span>
+          <MdArrowDropDown size={23} />
+        </button>
+        {isSuppDropdownOpen && (
+          <div className="mt-2 w-full rounded-md bg-white ring-1 ring-black ring-opacity-5">
+            <div className="py-1">
+              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Support Centre</Link>
+              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Place an Order</Link>
+              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Track an Order</Link>
+              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cancel an Order</Link>
+            </div>
+          </div>
+        )}
+      </div>
+      <div className={`${navStylez} lg:flex hidden relative`} onClick={toggleSuppDropdown}>
+        <button className='flex items-center'>
+          <MdSupportAgent size={18} />
+          <span>Support</span>
+          <MdArrowDropDown size={23} />
+        </button>
+        {isSuppDropdownOpen && (
+          <div className="absolute mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 top-11 right-1">
+            <div className="py-1">
+              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Support Centre</Link>
+              <Link to='/Products' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Place an Order</Link>
+              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Track an Order</Link>
+              <Link to='/' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cancel an order</Link>
+            </div>
+          </div>
+        )}
+      </div>
+
+
     </>
   );
 
@@ -155,7 +163,7 @@ const Navbar = () => {
               <Link to='/'>
                 <img src={logo} className='h-8' alt='Logo' />
               </Link>
-              <Link to='/' className='ml-3 text-xl font-bold'>shopBeta</Link>
+              <Link to='/' className='ml-2 text-sm font-bold lg:text-lg pr-2'>shopBeta</Link>
             </div>
             <div className='flex items-center'>
               <Search />
