@@ -27,18 +27,36 @@ const OrderList = () => {
                     <thead>
                         <tr>
                             <th className="py-2 px-4 border-b">Order ID</th>
-                            <th className="py-2 px-4 border-b">User Name</th>
+                            <th className="py-2 px-4 border-b">First Name</th>
+                            <th className="py-2 px-4 border-b">Last Name</th>
+                            <th className="py-2 px-4 border-b">Email</th>
+                            <th className="py-2 px-4 border-b">Street</th>
+                            <th className="py-2 px-4 border-b">Postcode</th>
+                            <th className="py-2 px-4 border-b">Country</th>
+                            <th className="py-2 px-4 border-b">State/County</th>
+                            <th className="py-2 px-4 border-b">City/Town</th>
+                            <th className="py-2 px-4 border-b">Phone Number</th>
                             <th className="py-2 px-4 border-b">Total Amount</th>
+                            <th className="py-2 px-4 border-b">Cart Page</th>
                             <th className="py-2 px-4 border-b">Payment Status</th>
                             <th className="py-2 px-4 border-b">Delivery Status</th>
-                            <th className="py-2 px-4 border-b">Cart Items</th>
+                            {/* <th className="py-2 px-4 border-b">Cart Items</th> */}
                         </tr>
                     </thead>
                     <tbody>
                         {orders.map(order => (
                             <tr key={order.id}>
                                 <td className="py-2 px-4 border-b">{order.id}</td>
-                                <td className="py-2 px-4 border-b">{order.userName}</td>
+                                <td className="py-2 px-4 border-b">{order.orderId}</td>
+                                <td className="py-2 px-4 border-b">{order.firstName}</td>
+                                <td className="py-2 px-4 border-b">{order.email}</td>
+                                <td className="py-2 px-4 border-b">{order.street}</td>
+                                <td className="py-2 px-4 border-b">{order.postcode}</td>
+                                <td className="py-2 px-4 border-b">{order.country}</td>
+                                <td className="py-2 px-4 border-b">{order.stateCounty}</td>
+                                <td className="py-2 px-4 border-b">{order.cityTown}</td>
+                                <td className="py-2 px-4 border-b">{order.phoneNumber}</td>
+                                <td className="py-2 px-4 border-b">{order.cartPageUrl}</td>
                                 <td className="py-2 px-4 border-b">£{order.totalAmount.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                                 <td className="py-2 px-4 border-b">
                                     <button

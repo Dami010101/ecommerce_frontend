@@ -26,6 +26,10 @@ import Products from './pages/products/Products';
 import { CartProvider } from './component/cart/CartContext';
 import OrderList from './component/orderManagement/OrderList';
 import { OrderProvider } from './component/orderManagement/OrderContext';
+import SuperAdminSignIn from './pages/superAdminProfile/SuperAdminSignIn';
+import SuperAdminSignUp from './pages/superAdminProfile/SuperAdminSignUp';
+import SuperAdminSignOut from './pages/superAdminProfile/SuperAdminSignOut';
+import SuperAdminProfile from './pages/superAdminProfile/SuperAdminProfile';
 
 
 function App() {
@@ -56,6 +60,10 @@ function App() {
         <Route element={<AdminSignIn/> } path='/AdminSignIn'/>    
         <Route element={<AdminSignUp/> } path='/AdminSignUp'/>    
         <Route element={<AdminSignOut/> } path='/AdminSignOut'/>    
+        <Route element={<SuperAdminSignIn/> } path='/SuperAdminSignIn'/>    
+        <Route element={<SuperAdminSignUp/> } path='/SuperAdminSignUp'/>    
+        <Route element={<SuperAdminSignOut/> } path='/SuperAdminSignOut'/>    
+        <Route element={<SuperAdminProfile/> } path='/SuperAdminProfile'/>    
         <Route element={<OrderList/> } path='/OrderList'/>    
       </Routes>
       <Footer/>

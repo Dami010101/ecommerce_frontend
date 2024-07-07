@@ -13,6 +13,7 @@ const Navbar = () => {
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSubDropdownOpen, setIsSubDropdownOpen] = useState(false);
+  const [isInnerDropdownOpen, setIsInnerDropdownOpen] = useState(false);
   const [isSuppDropdownOpen, setIsSuppDropdownOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,11 +22,18 @@ const Navbar = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
     setIsSubDropdownOpen(false);
+    setIsInnerDropdownOpen(false);
   };
 
   const toggleSubDropdown = (e) => {
     e.stopPropagation();
     setIsSubDropdownOpen(!isSubDropdownOpen);
+    setIsInnerDropdownOpen(false);
+  };
+
+  const toggleInnerDropdown = (e) => {
+    e.stopPropagation();
+    setIsInnerDropdownOpen(!isInnerDropdownOpen);
   };
 
   const toggleSuppDropdown = () => {
@@ -45,10 +53,6 @@ const Navbar = () => {
           )}
         </Link>
       </div>
-
-
-
-
 
       <div className="relative lg:hidden" onClick={toggleDropdown}>
         <button className={`${navStylez} flex items-center`}>
@@ -70,10 +74,23 @@ const Navbar = () => {
                 {isSubDropdownOpen && (
                   <div className="mt-2 ml-4 w-full rounded-md bg-white ring-1 ring-black ring-opacity-5">
                     <div className="py-1">
-                      <a href='SignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</a>
+                    <a href='SignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</a>
                       <a href='SignUp' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Up</a>
                       <a href='AdminProfile' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
                       <a href='SignOut' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Out</a>
+                      <div className="relative" onClick={(e) => e.stopPropagation()}>
+                        <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={toggleInnerDropdown}>
+                          Inner Staff <MdArrowDropDown size={20} className="inline" />
+                        </button>
+                        {isInnerDropdownOpen && (
+                          <div className="mt-2 ml-4 w-full rounded-md bg-white ring-1 ring-black ring-opacity-5">
+                            <div className="py-1">
+                            <a href='SuperAdminSignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</a>
+                            <a href='SuperAdminProfile' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -82,6 +99,7 @@ const Navbar = () => {
           </div>
         )}
       </div>
+      
       <div className={`${navStylez} lg:flex hidden relative`} onClick={toggleDropdown}>
         <button className='flex items-center'>
           <MdAccountBox size={18} />
@@ -106,6 +124,19 @@ const Navbar = () => {
                       <a href='SignUp' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Up</a>
                       <a href='AdminProfile' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
                       <a href='SignOut' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign Out</a>
+                      <div className="relative" onClick={(e) => { e.stopPropagation(); toggleInnerDropdown(e); }}>
+                        <button className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                          S. Admin <MdArrowDropDown size={20} className="inline" />
+                        </button>
+                        {isInnerDropdownOpen && (
+                          <div className="absolute top-11 mt-0 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
+                            <div className="py-1">
+                            <a href='SuperAdminSignIn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign In</a>
+                            <a href='SuperAdminProfile' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -149,7 +180,6 @@ const Navbar = () => {
           </div>
         )}
       </div>
-
 
     </>
   );

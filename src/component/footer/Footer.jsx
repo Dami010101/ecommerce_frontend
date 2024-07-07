@@ -12,6 +12,8 @@ const Footer = () => {
         <li className='text-xs'><a href='/'>INGREDIENTS</a></li>
         <li className='text-xs'><a href='/'>STORES</a></li>
         <li className='text-xs'><a href='/'>ABOUT US</a></li>
+        <li className='text-xs'><a href='SuperAdminSignUp'>S. ADMIN SIGN UP</a></li>
+        <li className='text-xs'><a href='SuperAdminSignOut'>S. ADMIN SIGN OUT</a></li>
       </ul>
       <ul>
         <h2 className='mb-1 font-semibold'>SUPPORT CENTER</h2>

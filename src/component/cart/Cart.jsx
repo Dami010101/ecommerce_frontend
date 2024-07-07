@@ -22,16 +22,35 @@ const Cart = () => {
     // Handler for the checkout button
     const handleCheckout = () => {
         const orderId = Date.now(); // Simple unique order ID
-        const userName = "John Doe"; // Replace with the actual user name in a real application
+        const firstName = "John"; // Replace with the actual user name in a real application
+        const lastName = "Doe"; // Replace with the actual user name in a real application
+        const email = "john.doe@example.com"; // Replace with the actual user email in a real application
+        const street = "123 Main St"; // Replace with the actual user address in a real application
+        const postcode = "12345"; // Replace with the actual user address in a real application
+        const country = "USA"; // Replace with the actual user address in a real application
+        const stateCounty = "New York"; // Replace with the actual user address in a real application
+        const cityTown = "New York City"; // Replace with the actual user address in a real application
+        const phoneNumber = "9876543210"; // Replace with the actual user phone number in a real application
+        const cartPageUrl = window.location.href//Replace with url for cart items page
         const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
         const newOrder = {
-            id: orderId,
-            userName,
+            id: 
+            orderId,
+            firstName,
+            lastName,
+            email,
+            street,
+            postcode,
+            country,
+            stateCounty,
+            cityTown,
+            phoneNumber,
             totalAmount,
+            cartPageUrl,
             paymentStatus: 'unpaid',
             deliveryStatus: 'undelivered',
-            cartItems,
+            // cartItems,
         };
 
         addOrder(newOrder); // Add the new order to the order context
