@@ -20,6 +20,32 @@ const SuperAdminProfile = () => {
         },
         profilePicture: 'https://via.placeholder.com/150',
       });
+
+      //State Initialization for Admins
+      const [admins, setAdmins] = useState([
+        {
+          id: 1,
+          firstName: 'Jane',
+          lastName: 'Doe',
+          email: 'jane.doe@example.com',
+          phoneNumber: '1122334455',
+          sex: 'Female',
+          age: 35,
+          maritalStatus: 'Married',
+          nationality: 'British',
+          address: {
+            street: '789 Admin St',
+            city: 'Admin City',
+            state: 'Admin State',
+            country: 'Admin Country',
+            postcode: '101112',
+          },
+          profilePicture: 'https://via.placeholder.com/150',
+        },
+        // Add more admin objects here
+      ]);
+      
+      
     
       const [users, setUsers] = useState([
         {
@@ -45,7 +71,7 @@ const SuperAdminProfile = () => {
       ]);
 
       
-    
+      const [adminSearchQuery, setAdminSearchQuery] = useState('');
       const [searchQuery, setSearchQuery] = useState('');
       const [selectedUser, setSelectedUser] = useState(null);
       const [isViewing, setIsViewing] = useState(false);
@@ -71,23 +97,51 @@ const SuperAdminProfile = () => {
         setIsEditingSuperAdmin(true);
       };
     
+      //To create a new user and new admin
       const handleSaveClick = () => {
         if (isEditingSuperAdmin) {
           setSuperAdmin(formData);
           setIsEditingSuperAdmin(false);
         } else {
-          if (formData.id === undefined) {
-            // New user case
-            const newUser = { ...formData, id: Date.now() };
-            setUsers([...users, newUser]);
+          if (selectedUser.isAdmin) {
+            saveAdmin();
           } else {
-            // Existing user case
-            setUsers(users.map((user) => (user.id === formData.id ? formData : user)));
+            saveUser();
           }
-          setSelectedUser(null);
-          setIsEditing(false);
         }
+      };     
+      const saveAdmin = () => {
+        const newAdmin = { ...formData, id: formData.id || Date.now() };
+      
+        if (formData.id === undefined) {
+          // New admin case
+          setAdmins([...admins, newAdmin]);
+        } else {
+          // Existing admin case
+          setAdmins(admins.map((admin) => (admin.id === formData.id ? formData : admin)));
+        }
+      
+        setSelectedUser(null);
+        setIsEditing(false);
       };
+      
+      const saveUser = () => {
+        const newUser = { ...formData, id: formData.id || Date.now() };
+      
+        if (formData.id === undefined) {
+          // New user case
+          setUsers([...users, newUser]);
+        } else {
+          // Existing user case
+          setUsers(users.map((user) => (user.id === formData.id ? formData : user)));
+        }
+      
+        setSelectedUser(null);
+        setIsEditing(false);
+      };
+      
+      
+      
     
       const handleDeleteClick = (id) => setUsers(users.filter((user) => user.id !== id));
     
@@ -110,11 +164,13 @@ const SuperAdminProfile = () => {
             postcode: '',
           },
           profilePicture: 'https://via.placeholder.com/150',
+          isAdmin: false, // Added this property
         };
         setSelectedUser(newUser);
         setFormData(newUser);
         setIsEditing(true);
       };
+      
     
       const handleChange = (e) => {
         const { name, value } = e.target;
@@ -140,6 +196,55 @@ const SuperAdminProfile = () => {
       const filteredUsers = users.filter((user) =>
         `${user.firstName} ${user.lastName}`.toLowerCase().includes(searchQuery.toLowerCase())
       );
+
+      //Handler Functions for Admin Management
+      const handleAdminEditClick = (admin) => {
+        setSelectedUser(admin);
+        setFormData(admin);
+        setIsEditing(true);
+      };
+      
+      const handleAdminViewClick = (admin) => {
+        setSelectedUser(admin);
+        setIsViewing(true);
+      };
+      
+      const handleAdminDeleteClick = (id) => setAdmins(admins.filter((admin) => admin.id !== id));
+      
+      const handleCreateAdmin = () => {
+        const newAdmin = {
+          id: undefined,
+          firstName: '',
+          lastName: '',
+          email: '',
+          phoneNumber: '',
+          sex: '',
+          age: '',
+          maritalStatus: '',
+          nationality: '',
+          address: {
+            street: '',
+            city: '',
+            state: '',
+            country: '',
+            postcode: '',
+          },
+          profilePicture: 'https://via.placeholder.com/150',
+          isAdmin: true, // Added this property
+        };
+        setSelectedUser(newAdmin);
+        setFormData(newAdmin);
+        setIsEditing(true);
+      };
+      
+      const handleAdminSearchChange = (e) => setAdminSearchQuery(e.target.value);
+      
+      const filteredAdmins = admins.filter((admin) =>
+        `${admin.firstName} ${admin.lastName}`.toLowerCase().includes(adminSearchQuery.toLowerCase())
+      );
+      
+
+      
   return (
 <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4"> Super Admin Profile</h1>
@@ -505,6 +610,66 @@ const SuperAdminProfile = () => {
           </div>
         </div>
       )}
+
+<h2 className="text-xl font-bold mb-4">Admin Management</h2>
+<div className="mb-4">
+  <input
+    type="text"
+    placeholder="Search Admins"
+    value={adminSearchQuery}
+    onChange={handleAdminSearchChange}
+    className="border p-2 rounded w-full"
+  />
+</div>
+
+<div className="mb-4">
+  <button
+    onClick={handleCreateAdmin}
+    className="bg-green-500 text-white px-4 py-2 rounded"
+  >
+    Create New Admin
+  </button>
+</div>
+
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  {filteredAdmins.map((admin) => (
+    <div key={admin.id} className="bg-white shadow-md rounded-lg p-4">
+      <div className="flex items-center mb-4">
+        <img
+          src={admin.profilePicture}
+          alt="Profile"
+          className="w-16 h-16 rounded-full mr-4"
+        />
+        <div>
+          <h2 className="text-lg font-semibold">
+            {admin.firstName} {admin.lastName}
+          </h2>
+          <p className="text-gray-600">{admin.email}</p>
+        </div>
+      </div>
+      <button
+        onClick={() => handleAdminViewClick(admin)}
+        className="bg-gray-500 text-white px-4 py-2 rounded mt-2 mr-2"
+      >
+        View
+      </button>
+      <button
+        onClick={() => handleAdminEditClick(admin)}
+        className="bg-blue-500 text-white px-4 py-2 rounded mt-2 mr-2"
+      >
+        Edit
+      </button>
+      <button
+        onClick={() => handleAdminDeleteClick(admin.id)}
+        className="bg-red-500 text-white px-4 py-2 rounded mt-2"
+      >
+        Delete
+      </button>
+    </div>
+  ))}
+</div>
+
+
     </div>
       )
 }
