@@ -1,4 +1,9 @@
 import React, { useState } from 'react'
+import axios from 'axios'
+import { URL } from '../../App';
+import { toast } from 'react-toastify';
+
+
 const countries = [
   "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda",
   "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain",
@@ -34,16 +39,31 @@ const countries = [
 
 const SignUp = () => {
   const [selectedCountry, setSelectedCountry] = useState('');
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const registerUser = async(e) => {
+    e.preventDefault();
+    const userData = {firstName, lastName, email, password};
+    try {
+      await axios.post('http://localhost:8004/api/user/register', userData);
+      await axios.post(`${URL}/api/user/register`)
+      toast.success('User Created Successfully')
+    } catch (error) {
+      toast.error(error)
+    }
+  }
 
   return (
     <div>
-         <form className="w-full max-w-lg mx-auto py-8">
+         <form onSubmit={registerUser} className="w-full max-w-lg mx-auto py-8">
       <div className="flex flex-wrap -mx-3 mb-6">
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
             First Name
           </label>
-          <input className="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text"/>
+          <input onChange={(e) => setFirstName(e.target.value)} value={firstName} className="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text"/>
         </div>
         <div className="w-full md:w-1/2 px-3">
           <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">

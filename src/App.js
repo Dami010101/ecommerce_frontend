@@ -30,7 +30,7 @@ import SuperAdminSignIn from './pages/superAdminProfile/SuperAdminSignIn';
 import SuperAdminSignUp from './pages/superAdminProfile/SuperAdminSignUp';
 import SuperAdminSignOut from './pages/superAdminProfile/SuperAdminSignOut';
 import SuperAdminProfile from './pages/superAdminProfile/SuperAdminProfile';
-
+export const URL = process.env.BACKEND_URL
 
 function App() {
   return (
